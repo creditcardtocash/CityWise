@@ -128,6 +128,7 @@
             perspectiveWrapper = document.getElementById( 'perspective' ),
             cont = perspectiveWrapper.querySelector( '.cont' ),
             contentWrapper = cont.querySelector( '.wrapper' );
+            
 
         showMenu.addEventListener( clickevent, function( ev ) {
             ev.stopPropagation();
