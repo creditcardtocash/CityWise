@@ -94,6 +94,16 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
+ var external = { 
+ varinit()
+ {
+   var showMenu = document.getElementById( 'showMenu' ),
+    perspectiveWrapper =document.getElementById( 'perspective' ),
+    cont = perspectiveWrapper.querySelector( '.cont' ),
+    contentWrapper = cont.querySelector( '.wrapper' ) ;
+ }
+} 
+external.varinit();
 (function() {
 
     function scrollY() {
