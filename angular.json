@@ -1,0 +1,147 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "Assignment1": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/assignment1",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "Assignment1:build:production"
+            },
+            "development": {
+              "browserTarget": "Assignment1:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Assignment1:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "/assets/css/animate.min.css",
+              "/assets/css/bootstrap.min.css",
+              "/assets/css/font-awesome.min.css",
+              "/assets/css/magnific-popup.min.css",
+              "/assets/css/jquery.fancybox.min.css",
+              "/assets/revolution/css/settings.css",
+              "/assets/css/owl.carousel.min.css",
+              "/assets/css/owl.theme.default.min.css",
+              "/assets/css/swiper.min.css",
+              "/assets/css/component.css",
+              "/assets/css/core.css",
+              "/assets/css/custom.css",
+              "src/assets/styles.css"
+            ],
+            "scripts": [
+              "/assets/js/jquery-3.2.1.js",
+              "/assets/js/bootstrap.min.js",
+              "/assets/js/jquery.appear.min.js",
+              "/assets/js/owl.carousel.min.js",
+              "/assets/js/jquery.magnific-popup.min.js",
+              "/assets/js/jquery.flip.min.js",
+              "/assets/js/jquery.fancybox.min.js",
+              "/assets/js/swiper.min.js",
+              "/assets/js/morphext.min.js",
+              "/assets/js/push_nav.js",
+              "/assets/js/wow.js",
+              "/assets/js/parallaxie.min.js",
+              "/assets/js/particles.min.js",
+              "/assets/js/isotope.pkgd.min.js",
+              "/assets/revolution/js/jquery.themepunch.tools.min.js",
+              "/assets/revolution/js/jquery.themepunch.revolution.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.actions.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.carousel.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.kenburn.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.migration.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.navigation.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.parallax.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.slideanims.min.js",
+              "/assets/revolution/js/extensions/revolution.extension.video.min.js",
+              "/assets/js/main.js"
+   
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "Assignment1"
+}
