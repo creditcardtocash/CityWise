@@ -8,12 +8,15 @@ import { Component, OnInit,ViewEncapsulation} from '@angular/core';
 
 })
 export class HomeComponent implements OnInit {
-
+  myScriptElement: HTMLScriptElement ;
   constructor() { 
-    
+    this.myScriptElement = document.createElement("script");
+    this.myScriptElement.src ="/assets/js/push_nav.js";
+    document.body.appendChild(this.myScriptElement);
   }
 
   ngOnInit(): void {
+   
   }
 
   ngAfterViewInit():void{

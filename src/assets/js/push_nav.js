@@ -125,6 +125,7 @@
         clickevent = mobilecheck() ? 'touchstart' : 'click';
 
     function init() {
+       
         var showMenu = document.getElementById( 'showMenu' ),
             perspectiveWrapper = document.getElementById( 'perspective' ),
             cont = perspectiveWrapper.querySelector( '.cont' ),
