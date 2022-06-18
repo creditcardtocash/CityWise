@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
     this.myScriptElement = document.createElement("script");
     this.myScriptElement.src ="/assets/js/push_nav.js";
     document.body.appendChild(this.myScriptElement);
+    this.myScriptElement = document.createElement("script");
+    this.myScriptElement.src ="/assets/js/particles.min.js";
+    document.body.appendChild(this.myScriptElement);
   }
 
   ngOnInit(): void {
